@@ -10,8 +10,10 @@ cat <<EOF >>/etc/nginx/conf.d/testgrpc.conf
 server {
 	listen 9443 ssl http2 so_keepalive=on;
 	server_name ${domain};
+	
 	index index.html;
 	root /var/www/html;
+	
 	ssl_certificate /etc/xray/xray.crt;
 	ssl_certificate_key /etc/xray/xray.key;
 	ssl_protocols TLSv1.2 TLSv1.3;
